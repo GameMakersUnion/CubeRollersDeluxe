@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PersistentInteger : MonoBehaviour {
-    public static int SceneCounter = 0;
+    public static int SceneCounter = 1;
     private static PersistentInteger _instance = null;
     public static PersistentInteger instance
     {
