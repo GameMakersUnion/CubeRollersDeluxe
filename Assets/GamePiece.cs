@@ -87,6 +87,11 @@ public abstract class GamePiece : MonoBehaviour
                     Player myself = (Player)this;
                     myself.isPainting = !((int)transform.eulerAngles.x == 0 && (int)transform.eulerAngles.y == 180);
                     Debug.Log(transform.eulerAngles + " rains? : " + myself.isPainting);
+                    
+                    //aww shucks, so close. but off by 1, the update occurs later in execution.
+                    //Canvas[] g;
+                    //g = GameObject.FindObjectsOfType<Canvas>().Where(gg => gg.isPainted).ToArray(); //ian was here
+                    //ScoresScript.score = g.Length; //
 
                 }
                 temp.Occupy(this);

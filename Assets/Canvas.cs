@@ -21,6 +21,7 @@ public class Canvas : GamePiece {
         {
             isPainted = !isPainted;
             this.Paint();
+            ScoresScript.UpdateScore(); //ian was here
             AudioSource.PlayClipAtPoint(DripSound,transform.position);
 
         }
