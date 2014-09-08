@@ -7,7 +7,8 @@ using System.Collections.Generic;
 public class RoomManager : MonoBehaviour {
     public static RoomManager roomManager;
     public static GameObject masterParent;
-    public static int SceneCounter = 0;
+    public bool isLoading = false;
+    //public static int SceneCounter = 0;
 
     public static Dictionary<Type, GameObject> pieceParents = new Dictionary<Type,GameObject>();
     public Cell[][] Grid;
@@ -58,6 +59,8 @@ public class RoomManager : MonoBehaviour {
         {
             Debug.LogWarning("Level needs <color=magenta>player</color>, add with <color=magenta>PuzzleMaker plugin</color>");
         }
+        
+
     }
     public List<T> GetPiecesOfType<T>() where T : GamePiece
     {
@@ -206,7 +209,15 @@ public class RoomManager : MonoBehaviour {
                 return;
             }
         }
-        AudioSource.PlayClipAtPoint(tada, Vector3.zero);
+        StartCoroutine(YourFunction());
+        //YourFunction();
+    }
+    IEnumerator YourFunction()
+    {
+        isLoading = true;
+        AudioSource.PlayClipAtPoint(tada, Camera.main.transform.position);
+        yield return new WaitForSeconds(2.0f);
         PersistentInteger.instance.SwitchScene();
     }
+
 }

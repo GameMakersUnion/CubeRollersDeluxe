@@ -5,6 +5,8 @@ using System.Linq;
 public class ScoresScript : MonoBehaviour {
 
     public GUIText guiText;
+    public GUIText guiLevel;
+
     Canvas[] g;
     private static int score { get; set; }
     private static int moves { get; set; }
@@ -17,10 +19,13 @@ public class ScoresScript : MonoBehaviour {
         float h = Screen.height * 0.35f;
 
         guiText.pixelOffset = new Vector2(w, h);
+        guiLevel.pixelOffset = new Vector2(-w, h);
 
         score = 0;
         g = GameObject.FindObjectsOfType<Canvas>();
         moves = 0;
+
+        guiLevel.text = PersistentInteger.SceneCounter.ToString();
 
 	}
 	

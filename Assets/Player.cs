@@ -37,7 +37,7 @@ public class Player : GamePiece
 
     public bool TryMove(Side s)
     {
-        if (!isMoving) return moveTo(s);
+        if (!isMoving && !RoomManager.roomManager.isLoading) return moveTo(s); //ugly coupling introduced by Ian
         return false;
     }
 

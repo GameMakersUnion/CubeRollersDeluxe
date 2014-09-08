@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/1.unity
+  - enabled: 1
     path: Assets/2.unity
   - enabled: 1
     path: Assets/3.unity
@@ -23,7 +25,3 @@ EditorBuildSettings:
     path: Assets/9.unity
   - enabled: 1
     path: Assets/10.unity
-  - enabled: 1
-    path: Assets/11.unity
-  - enabled: 1
-    path: Assets/1.unity

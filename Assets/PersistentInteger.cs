@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PersistentInteger : MonoBehaviour {
-    public static int SceneCounter = 1;
+    public static int SceneCounter;// = 1;
     private static PersistentInteger _instance = null;
     public static PersistentInteger instance
     {
@@ -17,10 +17,12 @@ public class PersistentInteger : MonoBehaviour {
         }
     }
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        
         if (_instance == null)
         {
             _instance = this;
+            SceneCounter = int.Parse(Application.loadedLevelName);
             DontDestroyOnLoad(_instance.gameObject);
         }
         else
@@ -34,15 +36,13 @@ public class PersistentInteger : MonoBehaviour {
     {
         try
         {
-            Application.LoadLevel(++SceneCounter);
+            Application.LoadLevel(SceneCounter++);
+            Debug.Log("LOADING LEVEL: " + SceneCounter);
         }
         catch
         {
             Debug.Log("No more levels to load.");
         }
     }
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

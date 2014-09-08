@@ -73,7 +73,7 @@ public abstract class GamePiece : MonoBehaviour
             {
                 currentLerp = 0f;
 
-                Debug.Log(transform.eulerAngles);
+                //Debug.Log(transform.eulerAngles);
                 
                 //transform.rotation = Quaternion.Euler(new Vector3(currentRot.x + x, currentRot.y + y, currentRot.z));
                 isMoving = false;
@@ -86,7 +86,7 @@ public abstract class GamePiece : MonoBehaviour
                 {
                     Player myself = (Player)this;
                     myself.isPainting = !((int)transform.eulerAngles.x == 0 && (int)transform.eulerAngles.y == 180);
-                    Debug.Log(transform.eulerAngles + " rains? : " + myself.isPainting);
+                    //Debug.Log(transform.eulerAngles + " rains? : " + myself.isPainting);
                     
                     //aww shucks, so close. but off by 1, the update occurs later in execution.
                     //Canvas[] g;
